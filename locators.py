@@ -17,7 +17,7 @@ class TestLocators:
     # Кнопка "Зарегистрироваться"
     REGISTRATION_BUTTON = By.XPATH, '//button[text() = "Зарегистрироваться"]'
     # Подпись "Некорректный пароль"
-    INCORRECT_PASSWOR = By.XPATH, '//p[text() = "Некорректный пароль"]'
+    INCORRECT_PASSWORD = By.XPATH, '//p[text() = "Некорректный пароль"]'
     # Кнопка "Войти в аккаунт"
     LOGIN_BUTTON = By.XPATH, '//button[text() = "Войти в аккаунт"]'
     # Кнопка "Войти" в форме ЛК
@@ -29,7 +29,7 @@ class TestLocators:
     # Кнопка "Оформить заказ"
     ORDER_BUTTON = By.XPATH, '//button[text() = "Оформить заказ"]'
     # Логотип
-    LOGO = By.XPATH, '//div[contains(@class, "AppHeader_header__logo__2D0X2")]'
+    LOGO = By.XPATH, '//div[contains(@class, "AppHeader_header__logo")]'
     # Кнопка перехода в конструктор
     CONSTRUCTOR_BUTTON = By.XPATH, '//p[text() = "Конструктор"]'
     # Вкладка "Булки"

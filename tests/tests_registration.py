@@ -14,11 +14,12 @@ class TestsRegistration:
         driver.find_element(*TestLocators.PERSONAL_AREA).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.REGISTRATION_HREF)).click()
-        driver.find_element(*TestLocators.NAME_FIELD).send_keys("Дмитрий")
-        driver.find_element(*TestLocators.EMAIL_FIELD_REG).send_keys("DmitriyOdintsov_08_196@yandex.ru")
+        driver.find_element(*TestLocators.NAME_FIELD).send_keys(NAME)
+        driver.find_element(*TestLocators.EMAIL_FIELD_REG).send_keys(EMAIL)
         driver.find_element(*TestLocators.PASSWORD_FIELD).send_keys("Dima1")
         driver.find_element(*TestLocators.REGISTRATION_BUTTON).click()
-        text_error = driver.find_element(*TestLocators.INCORRECT_PASSWOR).text
+        text_error = driver.find_element(*TestLocators.INCORRECT_PASSWORD).text
+        assert text_error == "Некорректный пароль"
         print(text_error)
 
     def test_registration_true(self, driver):
@@ -26,8 +27,8 @@ class TestsRegistration:
         driver.find_element(*TestLocators.PERSONAL_AREA).click()
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.REGISTRATION_HREF)).click()
-        driver.find_element(*TestLocators.NAME_FIELD).send_keys("Дмитрий")
-        driver.find_element(*TestLocators.EMAIL_FIELD_REG).send_keys("DmitriyOdintsov_08_196@yandex.ru")
-        driver.find_element(*TestLocators.PASSWORD_FIELD).send_keys("Dima08")
+        driver.find_element(*TestLocators.NAME_FIELD).send_keys(NAME)
+        driver.find_element(*TestLocators.EMAIL_FIELD_REG).send_keys(EMAIL)
+        driver.find_element(*TestLocators.PASSWORD_FIELD).send_keys(PASSWORD)
         driver.find_element(*TestLocators.REGISTRATION_BUTTON).click()
         print("Регистрация успешна!")
